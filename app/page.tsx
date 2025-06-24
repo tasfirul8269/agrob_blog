@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import BlogCard from '@/components/BlogCard';
 import { ArrowRight, TrendingUp, Users, BookOpen, Award, Star, Quote } from 'lucide-react';
 
@@ -145,9 +146,11 @@ export default function Home() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="absolute inset-0">
-          <img
+          <Image
             src={heroSlides[currentSlide].image}
             alt={heroSlides[currentSlide].title}
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover transition-opacity duration-500"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -229,7 +232,7 @@ export default function Home() {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Common trends. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
             </p>
           </div>
 
@@ -263,9 +266,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredAuthors.map((author, index) => (
               <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
-                <img
+                <Image
                   src={author.image}
                   alt={author.name}
+                  width={80}
+                  height={80}
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
                 />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{author.name}</h3>
@@ -322,11 +327,13 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8">
                 <Quote className="w-8 h-8 text-primary-400 mb-4" />
-                <p className="text-gray-700 mb-6 text-lg italic">"{testimonial.content}"</p>
+                <p className="text-gray-700 mb-6 text-lg italic">&quot;{testimonial.content}&quot;</p>
                 <div className="flex items-center space-x-4">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>

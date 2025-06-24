@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Search, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface SearchResult {
   id: string;
@@ -151,9 +152,11 @@ export default function HeaderSearch() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 transition-colors"
                 >
-                  <img
+                  <Image
                     src={result.image}
                     alt={result.title}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-lg object-cover"
                   />
                   <div className="flex-1 min-w-0">
@@ -172,13 +175,13 @@ export default function HeaderSearch() {
                   onClick={() => setIsOpen(false)}
                   className="text-sm text-primary-400 hover:text-primary-500 font-medium"
                 >
-                  View all results for "{query}"
+                  View all results for &quot;{query}&quot;
                 </Link>
               </div>
             </div>
           ) : query && (
             <div className="p-4 text-center text-gray-500">
-              <p className="text-sm">No results found for "{query}"</p>
+              <p className="text-sm">No results found for &quot;{query}&quot;</p>
               <p className="text-xs mt-1">Try different keywords</p>
             </div>
           )}

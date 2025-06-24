@@ -1,4 +1,5 @@
 import { MessageCircle, Reply } from 'lucide-react';
+import Image from 'next/image';
 
 interface CommentCardProps {
   author: string;
@@ -20,9 +21,11 @@ export default function CommentCard({
   return (
     <div className="bg-white rounded-lg border border-gray-100 p-6">
       <div className="flex items-start space-x-4">
-        <img 
+        <Image 
           src={avatar} 
           alt={author}
+          width={40}
+          height={40}
           className="w-10 h-10 rounded-full object-cover"
         />
         <div className="flex-1">

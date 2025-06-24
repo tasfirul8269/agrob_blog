@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Users, Target, Award, Globe, ArrowRight } from 'lucide-react';
 
 const teamMembers = [
@@ -77,12 +78,12 @@ export default function About() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                At Agrob, we're dedicated to transforming agriculture through sustainable practices and cutting-edge technology. 
+                At Agrob, we&apos;re dedicated to transforming agriculture through sustainable practices and cutting-edge technology. 
                 Our mission is to provide farmers, researchers, and agricultural professionals with the knowledge and tools they need 
                 to create a more sustainable and productive future.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                We believe that sustainable farming is not just about protecting the environment—it's about creating resilient 
+                We believe that sustainable farming is not just about protecting the environment—it&apos;s about creating resilient 
                 agricultural systems that can feed the world while preserving our planet for future generations.
               </p>
               <Link href="/blogs" className="btn-primary inline-flex items-center space-x-2">
@@ -91,9 +92,11 @@ export default function About() {
               </Link>
             </div>
             <div>
-              <img
+              <Image
                 src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Sustainable farming"
+                width={800}
+                height={600}
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -142,9 +145,11 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={400}
+                  height={400}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">

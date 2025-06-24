@@ -37,7 +37,7 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-              Have questions about sustainable farming? We're here to help you grow better.
+              Have questions about sustainable farming? We&apos;re here to help you grow better.
             </p>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function Contact() {
                 Get in Touch
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                We'd love to hear from you. Whether you have questions about sustainable farming practices, 
+                We&apos;d love to hear from you. Whether you have questions about sustainable farming practices, 
                 want to contribute content, or need technical support, our team is here to help.
               </p>
 
@@ -236,7 +236,7 @@ export default function Contact() {
                 Can I request specific topics to be covered?
               </h3>
               <p className="text-gray-600">
-                Absolutely! We value our community's input. Send us your topic suggestions, and we'll consider them for future articles.
+                Absolutely! We value our community&apos;s input. Send us your topic suggestions, and we&apos;ll consider them for future articles.
               </p>
             </div>
           </div>

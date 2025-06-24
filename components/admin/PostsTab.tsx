@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Search, Filter, MoreVertical, Edit, Trash2, Eye, Plus } from 'lucide-react';
+import Image from 'next/image';
 
 const mockPosts = [
   {
@@ -185,9 +186,11 @@ export default function PostsTab() {
                 <tr key={post.id} className="hover:bg-gray-50 transition-colors">
                   <td className="py-4 px-6">
                     <div className="flex items-center space-x-3">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 rounded-lg object-cover"
                       />
                       <div>

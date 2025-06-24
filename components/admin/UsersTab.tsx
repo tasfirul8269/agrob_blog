@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Search, Filter, MoreVertical, Edit, Trash2, Ban, CheckCircle, UserPlus } from 'lucide-react';
+import Image from 'next/image';
 
 const mockUsers = [
   {
@@ -186,9 +187,11 @@ export default function UsersTab() {
                 <tr key={user.id} className="hover:bg-gray-50 transition-colors">
                   <td className="py-4 px-6">
                     <div className="flex items-center space-x-3">
-                      <img
+                      <Image
                         src={user.avatar}
                         alt={user.name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full object-cover"
                       />
                       <div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { User, Bookmark, MessageCircle, Settings, LogOut, Heart } from 'lucide-react';
 
 const savedBlogs = [
@@ -47,9 +48,11 @@ export default function UserDashboard() {
           <div className="lg:w-80">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <div className="flex items-center space-x-4 mb-6">
-                <img
+                <Image
                   src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150"
                   alt="User Avatar"
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
@@ -147,9 +150,11 @@ export default function UserDashboard() {
                       <div className="space-y-4">
                         {savedBlogs.map((blog) => (
                           <div key={blog.id} className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                            <img
+                            <Image
                               src={blog.image}
                               alt={blog.title}
+                              width={80}
+                              height={80}
                               className="w-20 h-20 rounded-lg object-cover"
                             />
                             <div className="flex-1">
@@ -193,7 +198,7 @@ export default function UserDashboard() {
                                 {item.blogTitle}
                               </Link>
                             </h4>
-                            <p className="text-gray-700 mb-2">"{item.comment}"</p>
+                            <p className="text-gray-700 mb-2">&quot;{item.comment}&quot;</p>
                             <p className="text-sm text-gray-500">{item.date}</p>
                           </div>
                         ))}

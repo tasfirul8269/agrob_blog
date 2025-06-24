@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Search, Filter, MoreVertical, Eye, Trash2, CheckCircle, XCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const mockComments = [
   {
@@ -155,9 +156,11 @@ export default function CommentsTab() {
           <div key={comment.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center space-x-3">
-                <img
+                <Image
                   src={comment.avatar}
                   alt={comment.author}
+                  width={40}
+                  height={40}
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>

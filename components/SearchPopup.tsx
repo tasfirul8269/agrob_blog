@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Search, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface SearchResult {
   id: string;
@@ -167,9 +168,11 @@ export default function SearchPopup({ isOpen, onClose }: SearchPopupProps) {
                   onClick={handleResultClick}
                   className="flex items-center space-x-4 px-6 py-4 hover:bg-gray-50 transition-colors group"
                 >
-                  <img
+                  <Image
                     src={result.image}
                     alt={result.title}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 rounded-lg object-cover"
                   />
                   <div className="flex-1 min-w-0">

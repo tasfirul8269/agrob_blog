@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
 interface BlogCardProps {
@@ -26,9 +27,11 @@ export default function BlogCard({
     <Link href={`/blog/${id}`}>
       <article className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden card-hover cursor-pointer h-full flex flex-col">
         <div className="relative">
-          <img 
+          <Image 
             src={image} 
             alt={title}
+            width={800}
+            height={400}
             className="w-full h-48 object-cover"
           />
           {category && (

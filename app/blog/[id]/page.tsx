@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import CommentCard from '@/components/CommentCard';
 import BlogCard from '@/components/BlogCard';
 import { Calendar, User, Tag, Share2, Bookmark, ThumbsUp, MessageCircle } from 'lucide-react';
@@ -97,9 +98,11 @@ export default function BlogPost({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-white">
       {/* Hero Image */}
       <div className="relative h-96 overflow-hidden">
-        <img
+        <Image
           src={blogPost.image}
           alt={blogPost.title}
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -122,9 +125,11 @@ export default function BlogPost({ params }: { params: { id: string } }) {
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 mb-6">
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src={blogPost.authorAvatar}
                 alt={blogPost.author}
+                width={32}
+                height={32}
                 className="w-8 h-8 rounded-full object-cover"
               />
               <span>{blogPost.author}</span>
@@ -176,9 +181,11 @@ export default function BlogPost({ params }: { params: { id: string } }) {
         {/* Author Bio */}
         <div className="bg-gray-50 rounded-lg p-6 mb-12">
           <div className="flex items-start space-x-4">
-            <img
+            <Image
               src={blogPost.authorAvatar}
               alt={blogPost.author}
+              width={64}
+              height={64}
               className="w-16 h-16 rounded-full object-cover"
             />
             <div>

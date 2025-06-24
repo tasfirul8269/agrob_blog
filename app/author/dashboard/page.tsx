@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   PenTool, 
   FileText, 
@@ -64,9 +65,11 @@ export default function AuthorDashboard() {
           <div className="lg:w-80">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <div className="flex items-center space-x-4 mb-6">
-                <img
+                <Image
                   src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150"
                   alt="Author Avatar"
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
@@ -209,14 +212,14 @@ export default function AuthorDashboard() {
               <div className="p-6">
                 {activeTab === 'overview' && (
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-6">Welcome back, Sarah!</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-6">Welcome back, Sarah&apos;!</h3>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-medium text-gray-900 mb-4">Recent Activity</h4>
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3 text-sm">
                             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                            <span className="text-gray-600">Published "Sustainable farming practices"</span>
+                            <span className="text-gray-600">Published &quot;Sustainable farming practices&quot;</span>
                             <span className="text-gray-400">2 days ago</span>
                           </div>
                           <div className="flex items-center space-x-3 text-sm">
@@ -226,7 +229,7 @@ export default function AuthorDashboard() {
                           </div>
                           <div className="flex items-center space-x-3 text-sm">
                             <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            <span className="text-gray-600">Draft saved: "Smart irrigation systems"</span>
+                            <span className="text-gray-600">Draft saved: &quot;Smart irrigation systems&quot;</span>
                             <span className="text-gray-400">3 hours ago</span>
                           </div>
                         </div>
@@ -235,7 +238,7 @@ export default function AuthorDashboard() {
                         <h4 className="font-medium text-gray-900 mb-4">Performance</h4>
                         <div className="space-y-3">
                           <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-600">This month's views</span>
+                            <span className="text-sm text-gray-600">This month&apos;s views</span>
                             <span className="font-semibold text-gray-900">1,250</span>
                           </div>
                           <div className="flex justify-between items-center">
@@ -264,9 +267,11 @@ export default function AuthorDashboard() {
                     <div className="space-y-4">
                       {authorPosts.map((post) => (
                         <div key={post.id} className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
-                          <img
+                          <Image
                             src={post.image}
                             alt={post.title}
+                            width={80}
+                            height={80}
                             className="w-20 h-20 rounded-lg object-cover"
                           />
                           <div className="flex-1">
@@ -311,7 +316,7 @@ export default function AuthorDashboard() {
                             <h4 className="font-medium text-gray-900">{comment.postTitle}</h4>
                             <span className="text-sm text-gray-500">{comment.date}</span>
                           </div>
-                          <p className="text-gray-700 mb-2">"{comment.comment}"</p>
+                          <p className="text-gray-700 mb-2">&quot;{comment.comment}&quot;</p>
                           <p className="text-sm text-gray-600">by {comment.author}</p>
                         </div>
                       ))}

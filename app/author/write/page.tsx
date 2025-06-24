@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Save, Eye, Send, Upload, Tag, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 // Dynamically import ReactQuill to avoid SSR issues
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -74,9 +75,11 @@ export default function WritePost() {
         {/* Preview Content */}
         <div className="max-w-4xl mx-auto px-4 py-8">
           {coverImage && (
-            <img
+            <Image
               src={coverImage}
               alt="Cover"
+              width={1200}
+              height={400}
               className="w-full h-64 object-cover rounded-lg mb-8"
             />
           )}
@@ -171,9 +174,11 @@ export default function WritePost() {
               </label>
               {coverImage && (
                 <div className="relative">
-                  <img
+                  <Image
                     src={coverImage}
                     alt="Cover preview"
+                    width={80}
+                    height={80}
                     className="w-20 h-20 object-cover rounded-lg"
                   />
                   <button
